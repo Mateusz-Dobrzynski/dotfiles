@@ -39,5 +39,8 @@
   "python.analysis.typeCheckingMode": "basic",
   "workbench.editorAssociations": {
     "*.html": "default"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
