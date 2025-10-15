@@ -10,7 +10,7 @@ ASCII_ART=ascii_art.txt
 USER=user
 DELAY="0.2s"
 
-ps -ef | grep -P qemu-system-x86_64.+file=$DISK_IMAGE
+ps -ef | grep -q -P qemu-system-x86_64.+file=$DISK_IMAGE
 if [ $? == 0 ]; then
   VM_ALREADY_RUNNING=true
 else
@@ -40,7 +40,7 @@ if [ $VM_ALREADY_RUNNING == "false" ]; then
     $DISPLAY_OPTION &
 fi
 
-if [ $UI == "false" && $VM_ALREADY_RUNNING == "false" ]; then
+if [ $UI == "false" ] && [ $VM_ALREADY_RUNNING == "false" ]; then
 	echo "Starting kali. Please wait..."
 
 	cat $ASCII_ART | while IFS= read -r line; do
