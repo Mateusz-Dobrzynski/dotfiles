@@ -9,9 +9,10 @@ DISPLAY_OPTION=""
 ASCII_ART=ascii_art.txt
 USER=user
 DELAY="0.2s"
+PORT=PORT_NUMBER
 
 ps -ef | grep -q -P qemu-system-x86_64.+file=$DISK_IMAGE
-if [ $? == 0 ]; then
+if [ $? -eq 0 ]; then
   VM_ALREADY_RUNNING=true
 else
   VM_ALREADY_RUNNING=false
@@ -19,12 +20,12 @@ fi
 
 
 for arg in "$@"; do
-  if [ "$arg" == "-ui" ]; then
+  if [ "$arg" -eq "--ui" ]; then
     UI=true
   fi
 done
 
-if [ $UI == "false" ]; then
+if [ $UI -eq "false" ]; then
   DISPLAY_OPTION="-display none"
 fi
 if [ $VM_ALREADY_RUNNING == "false" ]; then
@@ -33,14 +34,14 @@ if [ $VM_ALREADY_RUNNING == "false" ]; then
     -m 4096 \
     -cpu host \
     -smp 4 \
-    -drive file=$DISK_IMAGE \
-    -nic user,model=virtio,hostfwd=tcp::2222-:22 \
+    -drive file="$DISK_IMAGE" \
+    -nic user,model=virtio,hostfwd=tcp::$PORT-:22 \
     -display gtk,zoom-to-fit=on \
     -boot c \
     $DISPLAY_OPTION &
 fi
 
-if [ $UI == "false" ] && [ $VM_ALREADY_RUNNING == "false" ]; then
+if [ $UI -eq "false" ] && [ $VM_ALREADY_RUNNING -eq "false" ]; then
 	echo "Starting kali. Please wait..."
 
 	cat $ASCII_ART | while IFS= read -r line; do
@@ -48,10 +49,10 @@ if [ $UI == "false" ] && [ $VM_ALREADY_RUNNING == "false" ]; then
 	    sleep "$DELAY"
 	done
 
-	ssh -p 2222 $USER@localhost
+	ssh -p $PORT $USER@localhost
 fi
 
-if [ $VM_ALREADY_RUNNING == "true" ]; then
+if [ $VM_ALREADY_RUNNING -eq "true" ]; then
   echo "kali already running, establishing SSH connection..."
-	ssh -p 2222 $USER@localhost
+	ssh -p $PORT $USER@localhost
 fi
