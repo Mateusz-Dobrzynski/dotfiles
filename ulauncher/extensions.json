@@ -1,0 +1,30 @@
+{
+    "com.github.haddystuff.ulauncher-fast-open": {
+        "id": "com.github.haddystuff.ulauncher-fast-open",
+        "url": "https://github.com/haddystuff/ulauncher-fast-open",
+        "updated_at": "2026-02-10T00:28:31.510913",
+        "last_commit": "f587b6b357f549ab648abf8b0817391edd38c5de",
+        "last_commit_time": "2025-10-26T17:12:10"
+    },
+    "com.github.mzmbq.ulauncher-timer": {
+        "id": "com.github.mzmbq.ulauncher-timer",
+        "url": "https://github.com/mzmbq/ulauncher-timer",
+        "updated_at": "2026-02-13T14:32:44.692911",
+        "last_commit": "efbbef5d2daf6fcdc537b4eb2b14d760fbb0a2cd",
+        "last_commit_time": "2025-11-27T18:52:59"
+    },
+    "com.github.ulauncher.ulauncher-emoji": {
+        "id": "com.github.ulauncher.ulauncher-emoji",
+        "url": "https://github.com/Ulauncher/ulauncher-emoji",
+        "updated_at": "2026-02-12T11:08:53.119023",
+        "last_commit": "195d167ea0cfdbb2169906b5acaac8097db84767",
+        "last_commit_time": "2025-10-05T04:07:23"
+    },
+    "com.github.zensoup.ulauncher-unicode": {
+        "id": "com.github.zensoup.ulauncher-unicode",
+        "url": "https://github.com/zensoup/ulauncher-unicode",
+        "updated_at": "2026-02-12T11:09:43.607481",
+        "last_commit": "0ad36c00a888e687b4bfbf76f266f1000040b337",
+        "last_commit_time": "2019-07-11T06:53:31"
+    }
+}

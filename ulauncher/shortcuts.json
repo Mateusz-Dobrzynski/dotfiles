@@ -1,0 +1,82 @@
+{
+    "77a7e371-7c40-48c0-8c3f-c91335f36701": {
+        "id": "77a7e371-7c40-48c0-8c3f-c91335f36701",
+        "name": "Google Search",
+        "keyword": "g",
+        "cmd": "https://google.com/search?q=%s",
+        "icon": "/usr/share/ulauncher/media/google-search-icon.png",
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1770676491.102437
+    },
+    "8883699e-ca41-4973-9973-0d24578dbe53": {
+        "id": "8883699e-ca41-4973-9973-0d24578dbe53",
+        "name": "Stack Overflow",
+        "keyword": "so",
+        "cmd": "https://stackoverflow.com/search?q=%s",
+        "icon": "/usr/share/ulauncher/media/stackoverflow-icon.svg",
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1770676491.1024494
+    },
+    "81d559ab-3e12-45dc-a80e-4c59aa1779f9": {
+        "id": "81d559ab-3e12-45dc-a80e-4c59aa1779f9",
+        "name": "Wikipedia",
+        "keyword": "wiki",
+        "cmd": "https://en.wikipedia.org/wiki/%s",
+        "icon": "/usr/share/ulauncher/media/wikipedia-icon.png",
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1770676491.102459
+    },
+    "1ec237ca-4078-46d7-9b76-32e87e17a869": {
+        "id": "1ec237ca-4078-46d7-9b76-32e87e17a869",
+        "name": "DuckDuckGo",
+        "keyword": "d",
+        "cmd": "#!/usr/bin/env node\n\nconst { spawn } = require(\"child_process\");\n\n// remove first two args (node path + script path)\nconst args = process.argv.slice(2);\n\nif (args.length === 0) {\n  console.log(\"No query provided.\");\n  process.exit(0);\n}\n\n// join words with +\nconst query = args.join(\"+\");\n\n// build URL\nconst url = `https://duckduckgo.com/?ia=web&q=${query}`;\n\n// run librewolf\nspawn(\"librewolf\", [url], {\n  detached: true,\n  stdio: \"ignore\"\n}).unref();\n",
+        "icon": "~/Pictures/logos/duck_duck_go_logo.png",
+        "is_default_search": true,
+        "run_without_argument": false,
+        "added": 1770676805.5514545
+    },
+    "e7aedea8-8e03-4786-bb02-bf48806fe520": {
+        "id": "e7aedea8-8e03-4786-bb02-bf48806fe520",
+        "name": "Buffer",
+        "keyword": "buf",
+        "cmd": "#!/usr/bin/env node\n\n// ====== CONFIG ======\nconst FILE_PATH = \"/home/matthew/confusing-excellence/Mental Buffer.md\";\n// ====================\n\nconst fs = require(\"fs\");\n\n// process.argv[0] = node\n// process.argv[1] = script path\n// everything after that = user arguments\nconst args = process.argv.slice(2);\n\n// Join all words into one line\nconst textToAppend = args.join(\" \");\n\nif (!textToAppend) {\n  console.log(\"No text provided.\");\n  process.exit(0);\n}\n\ntry {\n  fs.appendFileSync(FILE_PATH, \"\\n- \" + textToAppend, \"utf8\");\n  console.log(\"Appended successfully.\");\n} catch (err) {\n  console.error(\"Error writing to file:\", err.message);\n}",
+        "icon": "~/Pictures/icons/box_icon.png",
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1770677663.439955
+    },
+    "eb63e169-4590-432c-bfb8-55280ce7fec1": {
+        "id": "eb63e169-4590-432c-bfb8-55280ce7fec1",
+        "name": "Ulauncher workaround",
+        "keyword": "ulauncher",
+        "cmd": "ulauncher-toggle",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1770679177.73685
+    },
+    "7025081d-138b-4623-a4e0-4a684ea14c0e": {
+        "id": "7025081d-138b-4623-a4e0-4a684ea14c0e",
+        "name": "Wiktionary (Deutsch)",
+        "keyword": "de",
+        "cmd": "#!/usr/bin/env node\n\nconst { spawn } = require(\"child_process\");\n\n// remove first two args (node path + script path)\nconst args = process.argv.slice(2);\n\nif (args.length === 0) {\n  console.log(\"No query provided.\");\n  process.exit(0);\n}\n\n// join words with +\nconst query = args.join(\"+\");\n\n// build URL\nconst url = `https://de.wiktionary.org/w/index.php?search=${query}`;\n\n// run librewolf\nspawn(\"librewolf\", [url], {\n  detached: true,\n  stdio: \"ignore\"\n}).unref();",
+        "icon": "~/Pictures/logos/wiktionary_logo.png",
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1770989183.2476542
+    },
+    "c71c6baa-fde6-4218-9c69-ba84310853ac": {
+        "id": "c71c6baa-fde6-4218-9c69-ba84310853ac",
+        "name": "Cambridge Dictionary",
+        "keyword": "cam",
+        "cmd": "#!/usr/bin/env node\n\nconst { spawn } = require(\"child_process\");\n\n// remove first two args (node path + script path)\nconst args = process.argv.slice(2);\n\nif (args.length === 0) {\n  console.log(\"No query provided.\");\n  process.exit(0);\n}\n\n// join words with +\nconst query = args.join(\"+\");\n\n// build URL\nconst url = `https://dictionary.cambridge.org/dictionary/english/${query}`;\n\n// run librewolf\nspawn(\"librewolf\", [url], {\n  detached: true,\n  stdio: \"ignore\"\n}).unref();",
+        "icon": "~/Pictures/logos/cambridge_logo.png",
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1770989520.861171
+    }
+}
