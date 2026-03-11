@@ -1,9 +1,9 @@
 [Desktop Entry]
-Name=Select Firefox Profile
-Comment=Select your profile
+Name=Select Browser
+Comment=Select browser to use
 GenericName=Web Browser
-X-GNOME-FullName=Select Firefox\nProfile
-Exec=/usr/bin/select-firefox-profile.sh %U
+X-GNOME-FullName=Select Browser
+Exec=/usr/bin/select-browser.sh %U
 Terminal=false
 X-MultipleArgs=false
 Type=Application
